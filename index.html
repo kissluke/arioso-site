@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arioso — a practice mirror for the piano</title>
+<style>
+  :root { --navy:#0A1230; --navy2:#141C3A; --gold:#EDCC80; --ink:#E8E9F0; --dim:#A6ABC2; }
+  * { box-sizing:border-box; }
+  html, body { height:100%; }
+  body {
+    margin:0;
+    background:radial-gradient(120% 90% at 78% 8%, rgba(237,204,128,.16) 0%, rgba(237,204,128,0) 55%),
+               linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .wrap { max-width:560px; padding:60px 24px; text-align:center; }
+  h1 { font-family:"New York",Georgia,"Times New Roman",serif; font-weight:600;
+       font-size:44px; letter-spacing:.01em; margin:0 0 10px; }
+  .tag { color:var(--gold); font-size:17px; margin:0 0 28px; }
+  p { color:var(--dim); }
+  .lead { color:var(--ink); font-size:17px; }
+  nav { margin-top:40px; padding-top:24px; border-top:1px solid rgba(255,255,255,.12); }
+  nav a { color:var(--gold); text-decoration:none; margin:0 12px; font-size:15px; }
+  nav a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Arioso</h1>
+  <p class="tag">A practice mirror for the piano</p>
+
+  <p class="lead">Arioso listens while you play and reflects back what you actually played —
+  not what you meant to play.</p>
+
+  <p>No streaks, no scores, no confetti. Just an honest look at the take you just gave,
+  on freshly engraved music.</p>
+
+  <p style="margin-top:28px;">Coming to the App Store.</p>
+
+  <nav>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="mailto:arioso.app@gmail.com">Contact</a>
+  </nav>
+
+</div>
+</body>
+</html>
