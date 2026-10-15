@@ -4,12 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arioso — a practice mirror for the piano</title>
+<meta name="description" content="Arioso listens while you play the piano and shows you what you actually played. For iPhone and iPad.">
+<meta name="apple-itunes-app" content="app-id=6765957541">
+<meta property="og:title" content="Arioso">
+<meta property="og:description" content="A practice mirror for the piano. For iPhone and iPad.">
+<meta property="og:image" content="https://kissluke.github.io/arioso-site/arioso-promo-poster.jpg">
+<meta property="og:url" content="https://kissluke.github.io/arioso-site/">
 <style>
   :root { --navy:#0A1230; --navy2:#141C3A; --gold:#EDCC80; --ink:#E8E9F0; --dim:#A6ABC2; }
   * { box-sizing:border-box; }
-  html, body { height:100%; }
+  html { min-height:100%; background:var(--navy2); }
   body {
     margin:0;
+    min-height:100vh;
     background:radial-gradient(120% 90% at 78% 8%, rgba(237,204,128,.16) 0%, rgba(237,204,128,0) 55%),
                linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%);
     background-attachment:fixed;
@@ -17,12 +24,25 @@
     font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     display:flex; align-items:center; justify-content:center;
   }
-  .wrap { max-width:560px; padding:60px 24px; text-align:center; }
+  .wrap { max-width:560px; width:100%; padding:56px 24px; text-align:center; }
   h1 { font-family:"New York",Georgia,"Times New Roman",serif; font-weight:600;
        font-size:44px; letter-spacing:.01em; margin:0 0 10px; }
-  .tag { color:var(--gold); font-size:17px; margin:0 0 28px; }
+  .tag { color:var(--gold); font-size:17px; margin:0 0 32px; }
   p { color:var(--dim); }
-  .lead { color:var(--ink); font-size:17px; }
+
+  .promo { display:block; width:100%; max-width:300px; margin:0 auto;
+           border-radius:22px; overflow:hidden; background:#09090B;
+           border:1px solid rgba(255,255,255,.12);
+           box-shadow:0 18px 50px rgba(0,0,0,.45); }
+  .promo video { display:block; width:100%; height:auto; aspect-ratio:9 / 16; }
+  .promo:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+
+  .store { display:inline-block; margin-top:28px; padding:10px 22px;
+           border:1px solid var(--gold); border-radius:999px;
+           color:var(--gold); text-decoration:none; font-size:15px; }
+  .store:hover, .store:focus-visible { background:rgba(237,204,128,.12); }
+  .note { font-size:14px; margin:12px 0 0; }
+
   nav { margin-top:40px; padding-top:24px; border-top:1px solid rgba(255,255,255,.12); }
   nav a { color:var(--gold); text-decoration:none; margin:0 12px; font-size:15px; }
   nav a:hover { text-decoration:underline; }
@@ -32,11 +52,19 @@
 <div class="wrap">
 
   <h1>Arioso</h1>
-  <p class="tag">Your practice companian</p>
+  <p class="tag">Your piano practice partner</p>
 
+  <a class="promo" href="https://apps.apple.com/us/app/arioso/id6765957541"
+     aria-label="Arioso on the App Store">
+    <video autoplay muted loop playsinline preload="metadata"
+           poster="arioso-promo-poster.jpg" width="720" height="1280">
+      <source src="Arioso%20(New%20iOS%20App).mp4" type='video/mp4; codecs="hvc1"'>
+      <source src="arioso-promo.mp4" type="video/mp4">
+    </video>
+  </a>
 
-
-  <p style="margin-top:28px;">Coming to the App Store.</p>
+  <a class="store" href="https://apps.apple.com/us/app/arioso/id6765957541">View on the App Store</a>
+  <p class="note">For iPhone and iPad.</p>
 
   <nav>
     <a href="support.html">Support</a>
@@ -45,5 +73,12 @@
   </nav>
 
 </div>
+<script>
+  // Respect Reduce Motion: show the still frame instead of looping the video.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var v = document.querySelector('.promo video');
+    if (v) { v.removeAttribute('autoplay'); v.pause(); }
+  }
+</script>
 </body>
 </html>
